@@ -35,7 +35,7 @@ sp-io = { version = "23.0.0", default-features = false }
 sp-runtime = { version = "24.0.0", default-features = false, features = ["serde"] }
 sp-std = { version = "8.0.0", default-features = false }
 sp-version = { version = "22.0.0", default-features = false, features = ["serde"] }
-sp-weights = { version = "20.0.0", default-features = false, features = ["serde"] }
+sp-weights = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0", default-features = false, features = ["serde"] }
 sp-runtime-interface = { version = "17", default-features = false }
 binary-merkle-tree = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" , default-features = false }
 
@@ -45,7 +45,7 @@ once_cell = { version = "1.18", optional = true }
 hex-literal = "0.3.1"
 test-case = "1.2.3"
 criterion = "0.5.1"
-sp-externalities = "0.19.0"
+sp-externalities = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
 
 [features]
 default = [ "std" ]

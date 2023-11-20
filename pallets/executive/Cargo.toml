@@ -24,7 +24,7 @@ sp-core = { version = "21.0.0", default-features = false }
 sp-io = { version = "23.0.0", default-features = false }
 sp-runtime = { version = "24.0.0", default-features = false }
 sp-std = { version = "8.0.0", default-features = false }
-sp-tracing = { version = "10.0.0", default-features = false }
+sp-tracing = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
 
 [dev-dependencies]
 array-bytes = "6.1"
