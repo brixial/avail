@@ -13,8 +13,8 @@ targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
 # Our crates
-avail-core = { version = "0.5", default-features = false, features = ["runtime"] }
-nomad-core = { version = "0.1", default-features = false }
+avail-core = { git = "https://github.com/availproject/avail-core", tag = "node-v1.8.0.0", default-features = false, features = ["runtime"] }
+nomad-core = { git = "https://github.com/availproject/avail-core", tag = "node-v1.8.0.0", default-features = false }
 nomad-home = { path = "../home", default-features = false }
 
 #  Substrate 
@@ -31,8 +31,8 @@ frame-benchmarking = { version = "4.0.0-dev", default-features = false, optional
 hex-literal = { version = "0.3.4", optional = true }
 
 [dev-dependencies]
-nomad-base = "0.1" 
-nomad-merkle  = "0.1" 
+nomad-base = { git = "https://github.com/availproject/avail-core", tag = "node-v1.8.0.0" }
+nomad-merkle = { git = "https://github.com/availproject/avail-core", tag = "node-v1.8.0.0" }
 nomad-updater-manager = { path = "../updater-manager" }
 
 sp-io = { version = "23.0.0" }

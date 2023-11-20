@@ -24,7 +24,7 @@ frame-support = { version = "4.0.0-dev", default-features = false }
 frame-system = { version = "4.0.0-dev", default-features = false }
 
 [dev-dependencies]
-avail-core = { version = "0.5", features = ["runtime"] }
+avail-core = { git = "https://github.com/availproject/avail-core", tag = "node-v1.8.0.0", features = ["runtime"] }
 
 [features]
 default = [ "std" ]
