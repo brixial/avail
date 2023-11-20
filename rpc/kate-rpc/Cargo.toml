@@ -22,7 +22,7 @@ rayon = { version = "1.5.2" }
 sp-api = { version = "4.0.0-dev", default-features = false }
 frame-system = { version = "4.0.0-dev", default-features = false }
 sc-client-api = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-sp-blockchain = "4.0.0-dev"
+sp-blockchain = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
 sp-runtime = { version = "24.0.0", default-features = false }
 moka = { version = "0.12.1", features = [ "future" ] }
 
