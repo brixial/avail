@@ -37,7 +37,7 @@ sp-std = { version = "8.0.0", default-features = false }
 sp-version = { version = "22.0.0", default-features = false, features = ["serde"] }
 sp-weights = { version = "20.0.0", default-features = false, features = ["serde"] }
 sp-runtime-interface = { version = "17", default-features = false }
-binary-merkle-tree = { version = "4.0.0-dev", default-features = false }
+binary-merkle-tree = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" , default-features = false }
 
 once_cell = { version = "1.18", optional = true }
 
