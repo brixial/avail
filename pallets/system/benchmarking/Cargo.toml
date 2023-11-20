@@ -27,7 +27,7 @@ sp-std = { version = "8.0.0", default-features = false }
 
 [dev-dependencies]
 sp-io = "23.0.0" 
-sp-version = "22.0.0"
+sp-version = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
 sp-externalities = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
 
 [features]
