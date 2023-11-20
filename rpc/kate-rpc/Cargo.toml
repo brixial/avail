@@ -9,9 +9,9 @@ edition = "2021"
 avail-base = { path = "../../base", default-features = false }
 da-runtime = { path = "../../runtime", default-features = false }
 
-avail-core = { git = "https://github.com/availproject/avail-core", tag = "node-v1.8.0.0", default-features = false, features = ["runtime"] }
-kate = { git = "https://github.com/availproject/avail-core", tag = "node-v1.8.0.0", default-features = false }
-kate-recovery = { git = "https://github.com/availproject/avail-core", tag = "node-v1.8.0.0", default-features = false }
+avail-core = { git = "https://github.com/availproject/avail-core", tag = "markotest", default-features = false, features = ["runtime"] }
+kate = { git = "https://github.com/availproject/avail-core", tag = "markotest", default-features = false }
+kate-recovery = { git = "https://github.com/availproject/avail-core", tag = "markotest", default-features = false }
 
 # 3rd party
 jsonrpsee = { version = "0.16.2", features = ["server", "client", "macros"] }
@@ -20,10 +20,10 @@ rayon = { version = "1.5.2" }
 
 # Substrate
 sp-api = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
-frame-system = { version = "4.0.0-dev", default-features = false }
+frame-system = { path = "../../pallets/system", default-features = false }
 sc-client-api = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
 sp-blockchain = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-sp-runtime = { version = "24.0.0", default-features = false }
+sp-runtime = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
 moka = { version = "0.12.1", features = [ "future" ] }
 
 [features]

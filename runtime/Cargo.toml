@@ -15,8 +15,8 @@ targets = ["x86_64-unknown-linux-gnu"]
 [dependencies]
 
 # Internal
-avail-core = { git = "https://github.com/availproject/avail-core", tag = "node-v1.8.0.0", default-features = false, features = ["runtime"] }
-kate = { git = "https://github.com/availproject/avail-core", tag = "node-v1.8.0.0", default-features = false }
+avail-core = { git = "https://github.com/availproject/avail-core", tag = "markotest", default-features = false, features = ["runtime"] }
+kate = { git = "https://github.com/availproject/avail-core", tag = "markotest", default-features = false }
 da-control = { path = "../pallets/dactr", default-features = false }
 
 ## Nomad
@@ -96,10 +96,10 @@ pallet-mandate = { path = "../pallets/mandate", default-features = false }
 
 ## RPCs
 pallet-transaction-payment-rpc-runtime-api = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
-frame-system-rpc-runtime-api = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+frame-system-rpc-runtime-api = { path = "../pallets/system/rpc/runtime-api" , default-features = false }
 
 ## benchmarking
-frame-benchmarking = { version = "4.0.0-dev", default-features = false, optional = true }
+frame-benchmarking = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0", default-features = false, optional = true }
 frame-system-benchmarking = { path = "../pallets/system/benchmarking", default-features = false, optional = true }
 #pallet-session-benchmarking = { version = "4.0.0-dev", default-features = false, optional = true }
 #pallet-offences-benchmarking = { version = "4.0.0-dev", default-features = false, optional = true }

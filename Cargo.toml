@@ -20,32 +20,9 @@ frame-system-rpc-runtime-api = { path = "pallets/system/rpc/runtime-api" }
 
 [patch.crates-io]
 # Customized Local pallets
-frame-executive = { path = "pallets/executive" }
-frame-system = { path = "pallets/system" }
-frame-system-rpc-runtime-api = { path = "pallets/system/rpc/runtime-api" }
-frame-system-benchmarking = { path = "pallets/system/benchmarking" }
 
 # Other stuff
 rlp = { git = "https://github.com/paritytech/parity-common.git", tag = "rlp-v0.5.2" }
-
-# Substrate  (polkadot-v1.0.0).
-sp-core = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-sp-io = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-sp-std = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-sp-runtime = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-sp-runtime-interface = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-sp-arithmetic = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-sp-keystore = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-sp-state-machine = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-sp-trie = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-
-## Frame
-frame-support = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-
-
-## These dependencies are used for runtime benchmarking
-frame-benchmarking = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
-frame-benchmarking-cli = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
 
 ## CLI
 
