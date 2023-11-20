@@ -21,7 +21,7 @@ frame-benchmarking = { version = "4.0.0-dev", default-features = false, optional
 
 [dev-dependencies]
 sp-core = { version = "21.0.0", default-features = false }
-pallet-collective = { version = "4.0.0-dev", default-features = false }
+pallet-collective = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
 avail-core = { git = "https://github.com/availproject/avail-core", tag = "node-v1.8.0.0", features = ["runtime"] }
 
 [features]

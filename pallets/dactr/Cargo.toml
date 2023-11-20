@@ -30,11 +30,11 @@ sp-arithmetic = { version = "16.0.0", default-features = false }
 frame-support = { version = "4.0.0-dev", default-features = false }
 frame-system = { version = "4.0.0-dev", default-features = false }
 frame-benchmarking = { version = "4.0.0-dev", default-features = false, optional = true }
-pallet-utility = { version = "4.0.0-dev", default-features = false }
+pallet-utility = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
 
 [dev-dependencies]
-pallet-transaction-payment = "4.0.0-dev"
-pallet-balances = "4.0.0-dev"
+pallet-transaction-payment = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
+pallet-balances = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
 test-case = "1.2.3"
 
 [features]

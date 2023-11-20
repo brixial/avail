@@ -29,7 +29,7 @@ sp-tracing = { git = "https://github.com/paritytech/substrate.git", branch = "po
 [dev-dependencies]
 array-bytes = "6.1"
 pallet-balances = { version = "4.0.0-dev" }
-pallet-transaction-payment = { version = "4.0.0-dev" }
+pallet-transaction-payment = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
 sp-core = { version = "21.0.0" }
 sp-inherents = { git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v1.0.0" }
 sp-io = { version = "23.0.0" }
