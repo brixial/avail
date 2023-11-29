@@ -3,9 +3,10 @@
 FROM paritytech/ci-linux:1.71.0-bullseye as builder
 
 # Combine update, install, build, and cleanup in a single RUN to reduce layers
+ARG AVAIL_TAG=v1.6.0
 RUN apt-get update && \
     apt-get install -yqq --no-install-recommends git openssh-client && \
-    git clone -b v1.6.0 --single-branch https://github.com/availproject/avail.git /da/src/ && \
+    git clone -b $AVAIL_TAG --single-branch https://github.com/availproject/avail.git /da/src/ && \
     cd /da/src && \
     cargo build --release -p data-avail && \
     mv /da/src/target/release/data-avail /da/bin/data-avail && \
