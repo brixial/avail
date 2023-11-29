@@ -2,32 +2,18 @@
 # =========================
 FROM paritytech/ci-linux:1.71.0-bullseye as builder
 
-# Install needed packages
-RUN apt-get update && \
-	apt-get install -yqq --no-install-recommends git openssh-client && \
-	rm -rf /var/lib/apt/lists
-
-# Install nightly Rust for WASM  & prepare folders
-# RUN	rustup toolchain install nightly && \
-#	rustup target add wasm32-unknown-unknown --toolchain nightly && \
-#	rustup default nightly
-
 # Clone & build node binary.
 ARG AVAIL_TAG=v1.6.0
-RUN \
-	mkdir -p /da/state && \
-	mkdir -p /da/keystore && \
-	git clone -b $AVAIL_TAG --single-branch https://github.com/availproject/avail.git /da/src/ && \
-	cd /da/src && \
-	cargo build --release -p data-avail
-
-# Install binaries 
-RUN \ 
-	mkdir -p /da/bin && \
-	mv /da/src/misc/genesis /da && \
-	mv /da/src/target/release/data-avail /da/bin && \
-	# Clean src \
-	rm -rf /da/src
+RUN apt-get update && \
+    apt-get install -yqq --no-install-recommends git openssh-client && \
+    git clone -b $AVAIL_TAG --single-branch https://github.com/availproject/avail.git /da/src/ && \
+    cd /da/src && \
+    cargo build --release -p data-avail && \
+    mv /da/src/target/release/data-avail /da/bin/data-avail && \
+    apt-get remove -y git openssh-client && \
+    apt-get autoremove -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /da/src
 
 
 # Phase 1: Binary deploy
@@ -63,5 +49,4 @@ WORKDIR /da
 VOLUME ["/tmp", "/da/state", "/da/keystore"]
 
 # Entrypoint and CMD Configuration
-ENTRYPOINT ["/bin/bash", "-c", "echo /da/bin/data-avail $@ && exec /da/bin/data-avail $@", "--"]
-CMD ["--base-path", "/da/state", "--keystore-path", "/da/keystore", "--offchain-worker=Always", "--enable-offchain-indexing=true"]
+ENTRYPOINT ["/da/bin/data-avail", "--base-path", "/da/state", "--keystore-path", "/da/keystore", "--offchain-worker=Always", "--enable-offchain-indexing=true"]
