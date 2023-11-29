@@ -63,5 +63,5 @@ WORKDIR /da
 VOLUME ["/tmp", "/da/state", "/da/keystore"]
 
 # Entrypoint and CMD Configuration
-ENTRYPOINT ["/da/bin/data-avail"]
+ENTRYPOINT ["/bin/bash", "-c", "echo /da/bin/data-avail $@ && exec /da/bin/data-avail $@", "--"]
 CMD ["--base-path", "/da/state", "--keystore-path", "/da/keystore", "--offchain-worker=Always", "--enable-offchain-indexing=true"]
